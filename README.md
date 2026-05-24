@@ -29,10 +29,10 @@ Install dependencies:
 go mod tidy
 ```
 
-Set your MySQL DSN:
+Set your MySQL DSN in .env:
 
 ```bash
-export MYSQL_DSN='root:password@tcp(127.0.0.1:3306)/go_reminder?charset=utf8mb4&parseTime=True&loc=Local'
+MYSQL_DSN=root:password@tcp(127.0.0.1:3306)/go_reminder?charset=utf8mb4&parseTime=True&loc=Local
 ```
 
 Run migrations:
@@ -55,21 +55,18 @@ go run ./cmd/server
 
 Default server address: `http://localhost:8080`
 
-Optional environment variables:
+Set environment variables (optinal) :
 
 ```bash
 HTTP_ADDRESS=:8080
-MYSQL_DSN=root:password@tcp(127.0.0.1:3306)/go_reminder?charset=utf8mb4&parseTime=True&loc=Local
 SCHEDULER_INTERVAL_SECONDS=60
 ```
 
 For demo purposes, set `SCHEDULER_INTERVAL_SECONDS=10` to run the scheduler every 10 seconds.
 
-The server also runs pending migrations on startup. The explicit migrate command is still included so schema changes are managed in a Laravel-like, versioned way.
+The server also runs pending migrations on startup.
 
 ## Migrations and Seeders
-
-Go does not have one built-in migration system like Laravel. In production Go APIs, it is common to use a dedicated migration tool such as `golang-migrate`, `goose`, or `Atlas`.
 
 This project uses:
 
