@@ -6,8 +6,8 @@ REST API and background scheduler for configurable task reminders with an audit 
 
 - Gin-based REST API.
 - MySQL persistence through GORM.
-- Versioned SQL migrations through `golang-migrate`.
-- Seeder command similar to Laravel seeders.
+- Versioned SQL migrations.
+- Seeder commands.
 - Structured project layout under `cmd` and `internal`.
 - Seeded sample tasks and a default active reminder rule for quick demo.
 - CRUD APIs for reminder rules.
